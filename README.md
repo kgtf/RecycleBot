@@ -11,8 +11,7 @@ Developed collaboratively by [Krish](https://github.com/kgtf), [Aarav](https://g
 <img width="1536" height="2048" alt="D1D38A3C-B27D-4496-8AB0-D51685FDB479" src="https://github.com/user-attachments/assets/d5ff2cfa-39a5-4b99-a1c9-231bba7c18bf" />
 
 
-**How It Works
-**
+**How It Works**
 RecycleBot follows this pipeline:
 
 Object detected → Camera captures image → ML model classifies object → Recycling decision → Servo moves sorting platform
@@ -32,8 +31,7 @@ Cardboard, glass, metal, paper, and plastic are treated as recyclable, while obj
 
 The Raspberry Pi then controls a servo motor that tilts the physical sorting platform in the appropriate direction.
 
-**Machine Learning Model
-**
+**Machine Learning Model**
 The classifier is based on a pretrained ResNet-18 convolutional neural network using PyTorch.
 
 We used transfer learning rather than training a neural network entirely from scratch. Most of the pretrained network was frozen while the final ResNet block and classification layer were fine-tuned for our six waste categories.
@@ -63,8 +61,7 @@ Saving the model with the highest validation accuracy
 
 
 
-**Model Evaluation
-**
+**Model Evaluation**
 The final model was evaluated against a separate test set using overall accuracy, a classification report, and a confusion matrix.
 
 <img width="730" height="585" alt="Screenshot 2026-01-08 at 12 22 45 AM" src="https://github.com/user-attachments/assets/e9e732ef-3e0c-4e9a-8551-dc4d9eaa5514" />
@@ -76,8 +73,7 @@ Because the physical RecycleBot ultimately makes a binary recycle vs. trash deci
 
 The largest source of six-class confusion was glass, which was sometimes classified as metal or plastic.
 
-**Real-Time Raspberry Pi Integration
-**
+**Real-Time Raspberry Pi Integration**
 The trained model was deployed on a Raspberry Pi.
 
 The live system uses:
@@ -134,8 +130,7 @@ Git / GitHub
 3D printing
 
 
-**Development Process
-**
+**Development Process**
 The project took approximately 100 hours of team development.
 
 Major stages included:
@@ -158,7 +153,7 @@ AI tools helped us understand unfamiliar ML concepts, troubleshoot the model, an
 The project itself required integrating the trained model with our dataset, Raspberry Pi, camera, servo motor, and custom physical hardware to create a functioning real-world system.
 
 
-**Data Sources
-**TrashNet — Polygence Project, Roboflow Universe
+**Data Sources**
+TrashNet — Polygence Project, Roboflow Universe
 Garbage Classification Dataset — Globose Technology Solutions
 DataCamp — Python Convolutional Neural Networks (CNN) with TensorFlow Tutorial
